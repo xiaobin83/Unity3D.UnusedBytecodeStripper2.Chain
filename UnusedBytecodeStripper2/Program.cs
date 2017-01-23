@@ -21,7 +21,6 @@ namespace UnusedBytecodeStripper2.Chain
 		{
 			var dirOfDlls = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 			var possibleAssemblies = Directory.GetFiles(dirOfDlls, "*.dll");
-			var assemblies = new List<Type>();
 			IEnumerable<Type> processors = null;
 			foreach (var assemblyFile in possibleAssemblies)
 			{
@@ -45,9 +44,9 @@ namespace UnusedBytecodeStripper2.Chain
 					Log(e.Message);
 				}
 			}
-			if (assemblies.Count > 0)
+			var procs = processors.ToArray();
+			if (procs.Length > 0)
 			{
-				var procs = processors.ToArray();
 				System.Array.Sort(
 					procs, 
 					(a,	b) =>
