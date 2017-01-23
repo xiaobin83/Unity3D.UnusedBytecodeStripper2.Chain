@@ -27,7 +27,7 @@ namespace UnusedBytecodeStripper2.Chain
 			{
 				try
 				{
-					Log("Loading assembly " + assemblyFile + " ...");
+					Log("Loading assembly " + assemblyFile + " to check if contains DllProcessor ... ");
 					var assembly = Assembly.LoadFrom(assemblyFile);
 					if (assembly != null)
 					{
@@ -65,6 +65,10 @@ namespace UnusedBytecodeStripper2.Chain
 					newProc.ProcessDll(args);
 				}
 			}
+			else
+			{
+				Log("No DllProcessor found.");
+			}
 		}
 
 		static void DumpArgs(string[] args)
@@ -89,6 +93,7 @@ namespace UnusedBytecodeStripper2.Chain
 
 		static int SpawnOriginalExecutable(string[] args)
 		{
+			Log("Execute original UnusedBytecodeStripper2 ... ");
 			try
 			{
 				var monoCfgDir = Environment.GetEnvironmentVariable("MONO_CFG_DIR");
