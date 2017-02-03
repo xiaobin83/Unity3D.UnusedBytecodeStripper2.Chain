@@ -56,12 +56,19 @@ namespace UnusedBytecodeStripper2.Chain
 						return attrA.Priority - attrB.Priority;
 					});
 
-				foreach (var proc in procs)
+				try
 				{
-					Log("Execute DllProcessor " + proc.FullName);
-					var ctor = proc.GetConstructor(new Type[] { });
-					var newProc = (IProcessDll)ctor.Invoke(new object[] { });
-					newProc.ProcessDll(args);
+					foreach (var proc in procs)
+					{
+						Log("Execute DllProcessor " + proc.FullName);
+						var ctor = proc.GetConstructor(new Type[] { });
+						var newProc = (IProcessDll)ctor.Invoke(new object[] { });
+						newProc.ProcessDll(args);
+					}
+				}
+				catch (Exception e)
+				{
+					Log("DllProcessor error, " + e.Message);
 				}
 			}
 			else
