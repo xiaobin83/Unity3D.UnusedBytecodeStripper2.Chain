@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnusedBytecodeStripper2", "UnusedBytecodeStripper2.csproj", "{5873F188-F11F-4529-B475-8601B37283EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnusedBytecodeStripper2", "UnusedBytecodeStripper2\UnusedBytecodeStripper2.csproj", "{5873F188-F11F-4529-B475-8601B37283EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IProcessDll", "..\IProcessDll\IProcessDll.csproj", "{AC884087-50FC-46A3-B8B8-2286D138A0A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IProcessDll", "IProcessDll\IProcessDll.csproj", "{AC884087-50FC-46A3-B8B8-2286D138A0A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
